@@ -1,4 +1,4 @@
-# David Benson — consultancy site (static)
+# Life Consultancy (static website)
 HTML + Tailwind (CDN) + vanilla JS. Tailwind CDN is used so there is no build step; swap to the Tailwind CLI later if you want a purged CSS file.
 ## Run
 `npx serve .` or `python3 -m http.server 8000` → http://localhost:8000

@@ -48,6 +48,16 @@ const PRODUCTS = [
     description: "A concise perspective on economic trade-offs and longer-term value.",
   },
   {
+    id: "discipline-switches",
+    title: "Discipline Switches",
+    subtitle: "A framework for applying discipline across life and leadership",
+    kind: "Article",
+    price: 8,
+    color: "#e5ddd0",
+    description: "An exploration of five discipline switches—what, how, where, when and why—and their application across different areas of life and leadership.",
+    file: "assets/articles/discipline-switches.pdf",
+  },
+  {
     id: "the-positioning-canvas",
     title: "The Positioning Canvas",
     subtitle: "A clearer story for your product",
@@ -244,7 +254,7 @@ if (detailSection) {
   const product = PRODUCTS.find((entry) => entry.id === urlParams.get("id")) || PRODUCTS[0];
   const productIndex = PRODUCTS.indexOf(product);
 
-  document.title = `${product.title} — David Benson`;
+  document.title = `${product.title} — Life Consultancy`;
 
   detailSection.innerHTML = `
     <div class="wrap pt-10">
@@ -275,6 +285,14 @@ if (detailSection) {
             <button class="btn" data-add="${product.id}">Add to Cart ${AR}</button>
           </div>
 
+          ${product.file ? `
+            <section class="mt-8 border-t border-[var(--line)] pt-6">
+              <h2 class="serif h2 mb-4">Read the article</h2>
+              <p class="mut mb-4">Read the full article below, or <a class="underline" href="${product.file}" target="_blank" rel="noopener">open the PDF in a new tab</a>.</p>
+              <iframe class="w-full h-[75vh] rounded border border-[var(--line)]" src="${product.file}" title="${product.title} PDF by David Benson"></iframe>
+            </section>
+          ` : ""}
+
           <p class="text-xs text-[var(--mut)] mt-3">
             Sample product and pricing; purchase and digital delivery are not enabled in this concept.
           </p>
@@ -297,14 +315,11 @@ if (detailSection) {
       <div class="wrap grid md:grid-cols-2 gap-12">
         <div>
           <p class="eyebrow">About the ${product.kind.toLowerCase()}</p>
-          <h2 class="serif h2">Better decisions begin with a better question.</h2>
+          <h2 class="serif h2">${product.file ? "Five questions for intentional discipline." : "Better decisions begin with a better question."}</h2>
           <p class="mut mt-5">
-            ${product.title} is a proposed guide to slowing down the thinking process without losing momentum.
-            It explores how to define a decision, understand its context and separate meaningful signals from noise.
+            ${product.file ? product.description : `${product.title} is a proposed guide to slowing down the thinking process without losing momentum. It explores how to define a decision, understand its context and separate meaningful signals from noise.`}
           </p>
-          <p class="text-xs text-[var(--mut)] mt-4">
-            Editorial description is illustrative. Final content is to be confirmed.
-          </p>
+          ${product.file ? "" : '<p class="text-xs text-[var(--mut)] mt-4">Editorial description is illustrative. Final content is to be confirmed.</p>'}
         </div>
 
         <div class="card self-start">
@@ -361,4 +376,4 @@ if (detailSection) {
 }
 
 paintCart();
-$$(".rv").forEach((element) => io.observe(element));
+$$(".rv").forEach((element) => revealObserver.observe(element));

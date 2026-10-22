@@ -72,8 +72,8 @@ if (siteHeader) {
   siteHeader.innerHTML = `
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur">
       <div class="wrap flex items-center justify-between h-[72px]">
-        <a href="index.html" aria-label="David Benson, home">
-          <span class="serif text-xl block leading-none">David Benson</span>
+        <a href="index.html" aria-label="Life Consultancy, home">
+          <span class="serif text-xl block leading-none">Life Consultancy</span>
           <span class="text-[9px] tracking-[.14em] text-[var(--mut)]">CEO &amp; CONSULTANT</span>
         </a>
 
@@ -95,7 +95,7 @@ if (siteHeader) {
 
     <div id="menu" role="dialog" aria-modal="true" aria-label="Menu">
       <div class="flex justify-between items-center h-[48px]">
-        <span class="serif text-xl">David Benson</span>
+        <span class="serif text-xl">Life Consultancy</span>
         <button id="mc" class="min-h-[44px]">Close</button>
       </div>
 
@@ -137,7 +137,7 @@ if (siteFooter) {
     <footer class="iv pt-16 pb-8">
       <div class="wrap grid md:grid-cols-12 gap-10">
         <div class="md:col-span-5">
-          <p class="serif text-3xl">David Benson.</p>
+          <p class="serif text-3xl">Life Consultancy.</p>
           <p class="mut mt-4 max-w-sm">
             Thoughtful perspectives. Practical direction. Consulting for people and organisations
             navigating what comes next.
@@ -166,7 +166,7 @@ if (siteFooter) {
       </div>
 
       <div class="wrap mt-12 pt-6 border-t border-[var(--line)] flex flex-wrap justify-between gap-3 text-xs text-[var(--mut)]">
-        <span>© 2026 David Benson. Concept website.</span>
+        <span>© 2026 Life Consultancy. Concept website.</span>
         <span class="flex gap-4">
           <a href="#">Privacy policy</a>
           <a href="#">Terms</a>
